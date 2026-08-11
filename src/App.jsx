@@ -6,7 +6,6 @@ import Repository from "./pages/Repository/Repository"
 function App() {
   return (
     <>
-        <h1 className="text-red-500">App</h1>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/explore" element={<Explore/>}/>
