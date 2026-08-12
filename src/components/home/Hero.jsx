@@ -11,7 +11,9 @@ const Hero=()=>{
            <div className="mt-10 flex w-full max-w-2xl items-center rounded-xl border border-white/10 bg-white/[0.03] p-2 transition-transform hover:scale-105">
             <span className="px-3 text-zinc-500">🔍</span>
             <input 
-                type="text" 
+                type="text"
+            
+               
                 placeholder="Search repositories..."
                 className="flex-1 bg-transparent px-2 py-3 text-sm text-white outline-none placeholder:text-zinc-600 "
             
@@ -24,6 +26,8 @@ const Hero=()=>{
                 <span>Connections</span>
                 <span>Developers</span>
             </div>
+
+            
 
         </div>
     )
