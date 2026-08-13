@@ -10,20 +10,21 @@ const Explore=()=>{
     const [error,setError]=useState(null);
     const [hasSearched,setHasSearched]=useState(false);
 
-    const handleSearch=async()=>{
-
-        if(!query.trim()){
+    const handleSearch=async(searchQuery=query)=>{
+        
+        if(!searchQuery.trim()){
             return;
         }
         
         setLoading(true);
         setError(null);
-        setHasSearched(true);
+        
 
         try{
-            const data=await searchRepositories(query);
+            const data=await searchRepositories(searchQuery);
            
             setRepositories(data);
+            setHasSearched(true);
         }
         catch(error){
             setError(error);

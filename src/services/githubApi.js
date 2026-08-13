@@ -7,3 +7,13 @@ export const searchRepositories=async(query)=>{
     const data =await response.json();
     return data.items;
 }
+
+export const getRepositories=async(owner,name)=>{
+    const response=await fetch(`https://api.github.com/repos/${owner}/${name}`);
+
+    if(!response.ok){
+        throw new Error("failed to fetch repository");
+    }
+    return response.json();
+
+};

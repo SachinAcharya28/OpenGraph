@@ -9,7 +9,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/explore" element={<Explore/>}/>
-          <Route path="/repository/:owner/:repo" element={<Repository/>}/>
+          <Route path="/repository/:owner/:name" element={<Repository/>}/>
         </Routes>
     </>
   )
