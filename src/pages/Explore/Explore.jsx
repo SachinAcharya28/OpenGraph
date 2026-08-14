@@ -3,40 +3,41 @@ import { searchRepositories } from "../../services/githubApi";
 import SearchBar from "../../components/explore/SearchBar";
 import RepositoryCard from "../../components/explore/RepositoryCard";
 import { createGraphData } from "../../utils/graphData";
+import Graph from "../../components/Graph/Graph";
 
-const Explore=()=>{
-    const [query,setQuery]=useState("");
-    const [repositories,setRepositories]=useState([]);
-    const [loading,setLoading]=useState(false);
-    const [error,setError]=useState(null);
-    const [hasSearched,setHasSearched]=useState(false);
-    const [graphData,setGraphData]=useState({nodes:[],edges:[]})
+const Explore = () => {
+    const [query, setQuery] = useState("");
+    const [repositories, setRepositories] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [hasSearched, setHasSearched] = useState(false);
+    const [graphData, setGraphData] = useState({ nodes: [], edges: [] })
 
-    const handleSearch=async(searchQuery=query)=>{
-        
-        if(!searchQuery.trim()){
+    const handleSearch = async (searchQuery = query) => {
+
+        if (!searchQuery.trim()) {
             return;
         }
-        
+
         setLoading(true);
         setError(null);
-        
 
-        try{
-            const data=await searchRepositories(searchQuery);
-            const newgraphData=createGraphData(data);
+
+        try {
+            const data = await searchRepositories(searchQuery);
+            const newgraphData = createGraphData(data);
 
             setGraphData(newgraphData);
-            
-           
+
+
             setRepositories(data);
             setHasSearched(true);
         }
-        catch(error){
+        catch (error) {
             setError(error);
 
         }
-        finally{
+        finally {
             setLoading(false);
         }
 
@@ -46,35 +47,41 @@ const Explore=()=>{
 
     return (
         <>
-            
-             
-           <SearchBar query={query} setQuery={setQuery} handleSearch={handleSearch}/>
-                {
-                    loading &&(<p className="mt-8 text-center text-zinc-400 text-sm">Loading.....</p>
+
+
+            <SearchBar query={query} setQuery={setQuery} handleSearch={handleSearch} />
+            {
+                loading && (<p className="mt-8 text-center text-zinc-400 text-sm">Loading.....</p>
 
                 )}
 
-                {
-                    error && (<p className="mt-8 text-center text-red-700 text-sm">Something went wrong while searching repository</p>
+            {
+                error && (<p className="mt-8 text-center text-red-700 text-sm">Something went wrong while searching repository</p>
 
                 )}
 
-                {
-                    hasSearched && !loading && !error && repositories.length===0 &&(
-                        <div className="mt-16 text-center">
-                            <p className="text-white text-center font-medium">No repositories found</p>
+            {
+                hasSearched && !loading && !error && repositories.length === 0 && (
+                    <div className="mt-16 text-center">
+                        <p className="text-white text-center font-medium">No repositories found</p>
 
-                              <p className="mt-2 text-sm text-zinc-500">Try searching for another technology or project.</p>
-                        </div>
+                        <p className="mt-2 text-sm text-zinc-500">Try searching for another technology or project.</p>
+                    </div>
                 )}
 
-           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 p-6">
-                
-                    {repositories.map((repository) => (
-                                <RepositoryCard key={repository.id} repository={repository}/>
-                    ))}
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 p-6">
+
+                {repositories.map((repository) => (
+                    <RepositoryCard key={repository.id} repository={repository} />
+                ))}
+
+                {repositories.length > 0 && (
+                    <div className="mt-10">
+                        <Graph graphData={graphData} />
+                    </div>
+                )}
             </div>
-          
+
 
         </>
     )
