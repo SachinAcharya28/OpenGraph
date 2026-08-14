@@ -2,6 +2,7 @@ import { useState } from "react";
 import { searchRepositories } from "../../services/githubApi";
 import SearchBar from "../../components/explore/SearchBar";
 import RepositoryCard from "../../components/explore/RepositoryCard";
+import { createGraphData } from "../../utils/graphData";
 
 const Explore=()=>{
     const [query,setQuery]=useState("");
@@ -9,6 +10,7 @@ const Explore=()=>{
     const [loading,setLoading]=useState(false);
     const [error,setError]=useState(null);
     const [hasSearched,setHasSearched]=useState(false);
+    const [graphData,setGraphData]=useState({nodes:[],edges:[]})
 
     const handleSearch=async(searchQuery=query)=>{
         
@@ -22,6 +24,10 @@ const Explore=()=>{
 
         try{
             const data=await searchRepositories(searchQuery);
+            const newgraphData=createGraphData(data);
+
+            setGraphData(newgraphData);
+            
            
             setRepositories(data);
             setHasSearched(true);
