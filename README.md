@@ -2,8 +2,8 @@
 
 > An interactive open-source repository explorer that helps developers discover GitHub repositories and visualize relationships between related projects.
 
-🔗 **Live Demo:** `YOUR_VERCEL_URL`
-💻 **GitHub:** `YOUR_GITHUB_REPOSITORY_URL`
+🔗 **Live Demo:** `https://open-graph-gamma.vercel.app/`
+💻 **GitHub:** `https://github.com/SachinAcharya28/OpenGraph`
 
 ---
 
@@ -82,68 +82,13 @@ src/
 ```
 
 ---
-
-## Getting Started
-
-### Prerequisites
-
-* Node.js
-* npm
-* GitHub account
-
-### Installation
-
-Clone the repository:
-
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
-
-Navigate into the project:
-
-```bash
-cd opengraph
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Open the local URL provided by Vite in your browser.
-
----
-
-## Production Build
-
-To create a production build:
-
-```bash
-npm run build
-```
-
-To preview the production build locally:
-
-```bash
-npm run preview
-```
-
----
-
 ## Deployment
 
 OpenGraph is deployed using Vercel.
 
 Every update pushed to the connected GitHub repository can be automatically deployed through Vercel.
 
-🔗 **Live Demo:** `YOUR_VERCEL_URL`
+🔗 **Live Demo:** `https://open-graph-gamma.vercel.app/`
 
 ---
 
@@ -181,4 +126,4 @@ Building OpenGraph involved working with:
 
 Computer Science Student | Web Developer
 
-[GitHub](YOUR_GITHUB_PROFILE_URL) · [LinkedIn](YOUR_LINKEDIN_URL)
+[GitHub](https://github.com/SachinAcharya28) 
