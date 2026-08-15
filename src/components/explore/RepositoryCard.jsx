@@ -1,40 +1,36 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
+const RepositoryCard = ({ repository }) => {
+    const navigate = useNavigate();
 
-const RepositoryCard = ({ repository}) => {
-  
-    
+    const handleClick = () => {
+        navigate(`/repository/${repository.owner.login}/${repository.name}`);
+    };
+
     return (
-
         <div
-            
-            className="bg-white/3 min-h-[220px]  rounded-2xl border border-white/10 p-6 transition-all duration-200 hover:translate-y-1 hover:border-white/20 hover:bg-white/5 ">
-            <Link
-                className="text-lg font-semibold text-white"
-                to={`/repository/${repository.owner.login}/${repository.name}`} >{repository.name} 
-                
-            </Link>
+            onClick={handleClick}
+            className="cursor-pointer rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05] hover:-translate-y-1"
+        >
+            <p className="text-sm text-zinc-500">
+                {repository.owner.login}
+            </p>
 
-            <p className="mt-1 text-sm text-zinc-500">{repository.full_name}</p>
+            <h3 className="mt-2 text-lg font-medium text-white">
+                {repository.name}
+            </h3>
 
-            <p className="mt-4 line-clamp-2 text-sm leading-6 text-zinc-400">{repository.description || "No description available."}</p>
+            <p className="mt-3 line-clamp-2 text-sm leading-6 text-zinc-400">
+                {repository.description || "No description available"}
+            </p>
 
-            <div className="mt-6 flex gap-6 text-xs text-zinc-500">
+            <div className="mt-5 flex flex-wrap gap-4 text-xs text-zinc-500">
                 <span>⭐ {repository.stargazers_count}</span>
-                <span>forks {repository.forks_count}</span>
-                <span>Language {repository.language || "Unknown"}</span>
+                <span>🍴 {repository.forks_count}</span>
+                <span>{repository.language || "Unknown"}</span>
             </div>
-            
-            <a
-                href={repository.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex text-sm text-zinc-400 transition hover:text-white"
-            >
-                View on GitHub →
-            </a>
         </div>
+    );
+};
 
-    )
-}
 export default RepositoryCard;
