@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom'
 
 
-const RepositoryCard = ({ repository }) => {
+const RepositoryCard = ({ repository}) => {
   
     
     return (
 
         <div
             
-            className="bg-white/3  rounded-2xl border border-white/10 p-6 hover:translate-y-1 hover:border-white/20 hover:bg-white/5 ">
+            className="bg-white/3 min-h-[220px]  rounded-2xl border border-white/10 p-6 transition-all duration-200 hover:translate-y-1 hover:border-white/20 hover:bg-white/5 ">
             <Link
                 className="text-lg font-semibold text-white"
-                to={`/repository/${repository.owner.login}/${repository.name}`} >{repository.name}
+                to={`/repository/${repository.owner.login}/${repository.name}`} >{repository.name} 
+                
             </Link>
 
             <p className="mt-1 text-sm text-zinc-500">{repository.full_name}</p>

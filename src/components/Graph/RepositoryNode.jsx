@@ -2,7 +2,7 @@ import { Handle, Position } from "@xyflow/react";
 
 const RepositoryNode = ({ data }) => {
     return (
-        <div className="relative min-w-[170px] rounded-xl border border-white/10 bg-zinc-900 px-4 py-3 shadow-xl transition hover:border-white/25">
+        <div className="relative min-w-[170px] rounded-xl border border-white/10 bg-zinc-900 px-4 py-3 shadow-xl">
 
             <Handle
                 type="target"

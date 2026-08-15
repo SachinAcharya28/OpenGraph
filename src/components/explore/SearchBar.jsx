@@ -30,7 +30,7 @@ const SearchBar = ({ query, setQuery, handleSearch }) => {
               handleSearch();
             }
           }}
-          placeholder="Search GitHub repositories..."
+         placeholder="Search repositories, technologies, or projects..."
           className="flex-1 bg-transparent px-4 py-3 text-white outline-none placeholder:text-zinc-600"
         />
 

@@ -1,9 +1,10 @@
 import { areRelated } from "./repositoryRelations";
 
-export const createGraphData = (repositories) => {
+export const createGraphData = (repositories, centerRepositoryId = null) => {
     const nodes = repositories.map((repo) => ({
         id: String(repo.id),
         label: repo.name,
+        isCenter: String(repo.id) === String(centerRepositoryId),
     }));
 
     const edges = [];

@@ -20,7 +20,7 @@ const HowItWorks=()=>{
 
                             <div className="text-2xl">02</div>
                             <h3 className="mt-6 text-xl text-white">Explore</h3>
-                            <p className="mt-3 text-sm leading-6 text-zinc-400">See its technologies, contributors, and connections.</p>
+                            <p className="mt-3 text-sm leading-6 text-zinc-400">See its information, technologies, and connections.</p>
 
                         </div>
 
@@ -28,7 +28,7 @@ const HowItWorks=()=>{
 
                             <div className="text-2xl">03</div>
                             <h3 className="mt-6 text-xl text-white">Discover</h3>
-                            <p className="mt-3 text-sm leading-6 text-zinc-400">Find related projects and new technologies.</p>
+                            <p className="mt-3 text-sm leading-6 text-zinc-400">Discover related repositories and explore their connections.</p>
 
                         </div>
 
