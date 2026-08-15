@@ -40,7 +40,7 @@ const Hero = () => {
                     onClick={handleSearch}
                     className="rounded-lg bg-white px-4 py-3 text-sm font-medium text-black transition-transform hover:scale-105"
                 >
-                    →
+                    Search
                 </button>
             </div>
 

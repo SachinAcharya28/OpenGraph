@@ -2,11 +2,12 @@
 
 html,
 body,
-#root{
+#root {
     min-height: 100vh;
+    
 }
 
 body {
-    background-color: #09090b;
     color: white;
+    background-color: #09090b;
 }

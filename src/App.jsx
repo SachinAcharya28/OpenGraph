@@ -5,7 +5,7 @@ import Repository from "./pages/Repository/Repository"
 
 function App() {
   return (
-    <div className="min-h-screen bg-zinc-950">
+    <div className="min-h-screen">
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/explore" element={<Explore/>}/>
